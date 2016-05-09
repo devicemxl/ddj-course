@@ -1,0 +1,102 @@
+<!-- 
+	This centers both the chart and the images using a new centered-graphics class.
+	It illustrates that you can have more than one class/id on an element,
+	and also hows how to share styles across elements so you don't have to repeat yourself.
+-->
+
+<html>
+	<head>
+	    <title>Yay The Web!</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	    <script type="text/javascript">
+
+	      // Load the Visualization API and the piechart package.
+	      google.load('visualization', '1.0', {'packages':['corechart']});
+
+	      // Set a callback to run when the Google Visualization API is loaded.
+	      google.setOnLoadCallback(drawChart);
+
+	      // Callback that creates and populates a data table,
+	      // instantiates the pie chart, passes in the data and
+	      // draws it.
+	      function drawChart() {
+
+	        // Create the data table.
+	        var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Topping');
+	        data.addColumn('number', 'Slices');
+	        data.addRows([
+	          ['Mushrooms', 3],
+	          ['Onions', 1],
+	          ['Olives', 1],
+	          ['Zucchini', 1],
+	          ['Pepperoni', 2]
+	        ]);
+
+	        // Set chart options
+	        var options = {'title':'How Much Pizza I Ate Last Night',
+	                       'width': "50%",
+	                       'height':300};
+
+	        // Instantiate and draw our chart, passing in some options.
+	        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+	        chart.draw(data, options);
+	      }
+	    </script>
+
+	    <style>
+
+	    	.centered-graphics  {
+	    		margin-left: 25%;
+	    		margin-right: 25%;
+	    		width: 50%;
+	    	}
+
+	    	#clickable {
+	    		margin-left: 45%;
+	    		margin-right: 45%;
+	    		margin-top: 2em;
+	    		margin-bottom: 2em;
+	    		width: 10%;
+	    	}
+
+	    	.content {
+	    		margin-left: 10%;
+	    		margin-right: 10%;
+	    		margin-top: 20px;
+	    	}
+	    </style>
+
+	</head>
+
+	<body> 
+		<div class="content">
+			<h1>Hello!</h1>
+			
+			<p> Irony direct trade fingerstache, fashion axe mumblecore beard organic selvage. Letterpress Blue Bottle you probably haven't heard of them Banksy, aesthetic chambray wolf Marfa biodiesel kogi Bushwick 8-bit ethical.</p>
+
+			<div id="chart_div" class="centered-graphics"></div>
+
+			<p class="special"> Photo booth banh mi butcher, fixie Neutra ugh hoodie plaid shabby chic squid freegan lomo. Mumblecore kitsch street art tilde. Helvetica keytar typewriter lumbersexual, keffiyeh swag taxidermy occupy meh American Apparel pour-over deep v freegan. Cornhole YOLO Intelligentsia pickled +1 iPhone. Kitsch letterpress actually food truck.</p>
+
+			<button id="clickable">Slide!</button>
+
+			<img id="tinyImage" class="centered-graphics" src="http://i.imgur.com/KUunHgr.jpg">
+
+			<p class="special"> Skateboard 90's fanny pack Odd Future, stumptown kale chips Etsy DIY gastropub locavore. Direct trade swag blog, sustainable butcher flexitarian VHS four loko meggings. Wolf Portland ennui, locavore butcher four dollar toast yr Tumblr High Life keytar four loko pour-over Pitchfork. Single-origin coffee normcore bitters lo-fi, Godard cronut direct trade flannel dreamcatcher fashion axe. Wayfarers fashion axe literally ethical.</p> 
+
+			<p> Distillery cardigan Neutra, Kickstarter viral McSweeney's Williamsburg dreamcatcher sustainable readymade. Williamsburg craft beer single-origin coffee sriracha, polaroid synth raw denim 8-bit Brooklyn jean shorts cred. </p>
+		</div>
+	</body>
+
+	<script>
+    	$("#clickable").click(function() {
+			$("#tinyImage").slideToggle("slow");
+		});
+    </script>
+
+</html>
+

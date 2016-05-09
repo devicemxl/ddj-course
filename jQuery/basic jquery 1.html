@@ -1,10 +1,6 @@
 <!-- 
-  Set the image size and center it.
-  There is not "center" command in CSS. Instead, we need to set the left and
-  right margins to be equal and measured in percentage of the page width.
-  The image width also needs to be a percentage, and left+image+right must = 100%
-  In this example we also add a border and some padding so you can see how
-  margin and padding differ.
+	Starter file for interactive jQuery example. An image and a button which does nothing.
+	But we do give names to the button and the image using id's.
 -->
 
 <html>
@@ -12,12 +8,18 @@
 	    <title>Yay The Web!</title>
 
 	    <style>
-	    	img  {
-	    		border-style: dotted;
-	    		padding: 10px;
-	    		margin-left: 30%;
-	    		margin-right: 30%;
-	    		width: 40%;
+	    	#tinyImage  {
+	    		margin-left: 45%;
+	    		margin-right: 45%;
+	    		width: 10%;
+	    	}
+
+	    	#clickable {
+	    		margin-left: 45%;
+	    		margin-right: 45%;
+	    		margin-top: 2em;
+	    		margin-bottom: 2em;
+	    		width: 10%;
 	    	}
 
 	    	.content {
@@ -36,7 +38,9 @@
 
 			<p class="special"> Photo booth banh mi butcher, fixie Neutra ugh hoodie plaid shabby chic squid freegan lomo. Mumblecore kitsch street art tilde. Helvetica keytar typewriter lumbersexual, keffiyeh swag taxidermy occupy meh American Apparel pour-over deep v freegan. Cornhole YOLO Intelligentsia pickled +1 iPhone. Kitsch letterpress actually food truck.</p>
 
-			<img src="http://i.imgur.com/KUunHgr.jpg">
+			<button id="clickable">Go!</button>
+
+			<img id="tinyImage" src="http://i.imgur.com/KUunHgr.jpg">
 
 			<p class="special"> Skateboard 90's fanny pack Odd Future, stumptown kale chips Etsy DIY gastropub locavore. Direct trade swag blog, sustainable butcher flexitarian VHS four loko meggings. Wolf Portland ennui, locavore butcher four dollar toast yr Tumblr High Life keytar four loko pour-over Pitchfork. Single-origin coffee normcore bitters lo-fi, Godard cronut direct trade flannel dreamcatcher fashion axe. Wayfarers fashion axe literally ethical.</p> 
 
